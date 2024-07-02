@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwoodjeg4hebo"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_56l60"]
+[ext_resource type="Texture2D" uid="uid://h35s8xbf1ti4" path="res://assets/slime_body.png" id="1_wtesi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrs5r"]
+atlas = ExtResource("1_wtesi")
+region = Rect2(0, 0, 108, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_btgks"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrs5r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5iv72"]
+radius = 11.0454
+
+[node name="enemy" type="CharacterBody2D"]
+modulate = Color(1, 0, 0, 1)
+collision_layer = 4
+collision_mask = 35
+script = ExtResource("1_56l60")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_btgks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_5iv72")
+debug_color = Color(1.09104e-08, 0.237515, 0.282173, 0.42)

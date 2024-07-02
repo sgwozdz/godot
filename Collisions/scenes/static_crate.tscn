@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://drrcpkdxpjd0k"]
+
+[ext_resource type="Texture2D" uid="uid://cxdje2xwko2m" path="res://assets/crate.png" id="1_d8dn3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmuyi"]
+atlas = ExtResource("1_d8dn3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l1ifa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmuyi")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj5yl"]
+size = Vector2(34, 30)
+
+[node name="staticCrate" type="StaticBody2D"]
+collision_layer = 32
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -18)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_l1ifa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -15)
+shape = SubResource("RectangleShape2D_vj5yl")
