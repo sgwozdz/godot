@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://351q1fd05pmy"]
+
+[ext_resource type="Texture2D" uid="uid://bhf66srx4lyp0" path="res://assets/lamp.png" id="1_6tajp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmpe2"]
+size = Vector2(14, 18)
+
+[sub_resource type="Gradient" id="Gradient_pdkpn"]
+colors = PackedColorArray(0.999999, 0.594436, 0.0795192, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1xsio"]
+gradient = SubResource("Gradient_pdkpn")
+fill = 1
+fill_from = Vector2(0.502294, 0.490826)
+fill_to = Vector2(0.862385, 0.848624)
+
+[node name="lamp" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+texture = ExtResource("1_6tajp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_wmpe2")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.0862745, 1, 1)
+energy = 5.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_1xsio")
+texture_scale = 2.0

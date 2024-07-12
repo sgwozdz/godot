@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://1jua5hofgjre"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_cmkpa"]
+[ext_resource type="Texture2D" uid="uid://bhf66srx4lyp0" path="res://assets/lamp.png" id="2_eampc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibyv1"]
+size = Vector2(12, 18)
+
+[sub_resource type="Gradient" id="Gradient_m2qb6"]
+offsets = PackedFloat32Array(0, 0.493506, 0.733766, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.172078, 0.172078, 0.172078, 1, 0.139301, 0.139301, 0.139301, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f25ki"]
+gradient = SubResource("Gradient_m2qb6")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.493119, 0.488532)
+fill_to = Vector2(0.887615, 0.190367)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_cmkpa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+texture = ExtResource("2_eampc")
+region_rect = Rect2(964.757, 3.37856, 22.1482, 22.6488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_ibyv1")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -11)
+color = Color(0.286275, 0.145098, 0.92549, 1)
+energy = 13.87
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_f25ki")

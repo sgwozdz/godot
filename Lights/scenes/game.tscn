@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://ci3k8ojreldei"]
+
+[ext_resource type="PackedScene" uid="uid://1jua5hofgjre" path="res://scenes/player.tscn" id="1_3i4mq"]
+[ext_resource type="PackedScene" uid="uid://bm5m2sjebg824" path="res://scenes/statue.tscn" id="2_bfy7m"]
+[ext_resource type="PackedScene" uid="uid://bdhbvcwpv3ppa" path="res://scenes/tombstone.tscn" id="3_ele5n"]
+[ext_resource type="PackedScene" uid="uid://b4um1vtoou25d" path="res://scenes/scarecrow.tscn" id="4_hiye6"]
+[ext_resource type="PackedScene" uid="uid://43wjr8q78j8l" path="res://scenes/sunflowers.tscn" id="5_0pxxo"]
+[ext_resource type="PackedScene" uid="uid://351q1fd05pmy" path="res://scenes/lamp.tscn" id="6_0pad7"]
+
+[sub_resource type="Environment" id="Environment_f356b"]
+background_mode = 3
+tonemap_mode = 3
+
+[node name="game" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1162.0
+offset_top = -731.0
+offset_right = 1153.0
+offset_bottom = 773.0
+color = Color(0.297706, 0.297706, 0.297706, 1)
+
+[node name="player" parent="." instance=ExtResource("1_3i4mq")]
+position = Vector2(0, -9)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(0, 9)
+zoom = Vector2(3, 3)
+
+[node name="statue" parent="." instance=ExtResource("2_bfy7m")]
+position = Vector2(-114, 1)
+
+[node name="tombstone" parent="." instance=ExtResource("3_ele5n")]
+position = Vector2(-54, 1)
+
+[node name="tombstone3" parent="." instance=ExtResource("3_ele5n")]
+position = Vector2(-146, 86)
+
+[node name="tombstone4" parent="." instance=ExtResource("3_ele5n")]
+position = Vector2(-78, 86)
+
+[node name="tombstone2" parent="." instance=ExtResource("3_ele5n")]
+position = Vector2(-175, 0)
+
+[node name="scarecrow" parent="." instance=ExtResource("4_hiye6")]
+position = Vector2(146, 2)
+
+[node name="sunflowers" parent="." instance=ExtResource("5_0pxxo")]
+position = Vector2(71, 3)
+
+[node name="sunflowers2" parent="." instance=ExtResource("5_0pxxo")]
+position = Vector2(221, 3)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f356b")
+
+[node name="lamp" parent="." instance=ExtResource("6_0pad7")]
+position = Vector2(-115, -1)

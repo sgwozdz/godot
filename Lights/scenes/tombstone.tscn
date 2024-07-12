@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdhbvcwpv3ppa"]
+
+[ext_resource type="Texture2D" uid="uid://c5pmwcq43byxj" path="res://assets/tombstone.png" id="1_fryre"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22s6u"]
+size = Vector2(38, 48)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qq28g"]
+polygon = PackedVector2Array(3, -24, 5, -24, 5, -23, 6, -23, 6, -22, 7, -22, 7, -21, 8, -21, 8, -19, 9, -19, 9, -18, 11, -18, 11, -17, 12, -17, 12, -16, 13, -16, 13, -15, 14, -15, 14, -5, 13, -5, 13, -4, 12, -4, 12, -3, 11, -3, 11, 13, 12, 13, 12, 14, 13, 14, 13, 15, 14, 15, 14, 17, 16, 17, 16, 18, 17, 18, 17, 19, 18, 19, 18, 20, 19, 20, 19, 24, 18, 24, 18, 25, 17, 25, 17, 26, -18, 26, -18, 25, -19, 25, -19, 19, -18, 19, -18, 18, -17, 18, -17, 17, -15, 17, -15, 15, -14, 15, -14, 14, -13, 14, -13, 13, -12, 13, -12, -3, -13, -3, -13, -4, -14, -4, -14, -5, -15, -5, -15, -15, -14, -15, -14, -16, -13, -16, -13, -17, -12, -17, -12, -18, -10, -18, -10, -19, -9, -19, -9, -21, -8, -21, -8, -22, -7, -22, -7, -23, -6, -23, -6, -24, -4, -24, -4, -25, 3, -25)
+
+[node name="tombstone" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("1_fryre")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_22s6u")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, -24)
+occluder = SubResource("OccluderPolygon2D_qq28g")
