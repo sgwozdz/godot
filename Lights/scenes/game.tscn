@@ -11,14 +11,19 @@
 background_mode = 3
 tonemap_mode = 3
 
-[node name="game" type="Node"]
+[node name="game" type="Node2D"]
+light_mask = 3
 
 [node name="ColorRect" type="ColorRect" parent="."]
+light_mask = 3
 offset_left = -1162.0
 offset_top = -731.0
 offset_right = 1153.0
 offset_bottom = 773.0
-color = Color(0.297706, 0.297706, 0.297706, 1)
+color = Color(0.229577, 0.322775, 0.275051, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
 
 [node name="player" parent="." instance=ExtResource("1_3i4mq")]
 position = Vector2(0, -9)
