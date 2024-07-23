@@ -23,7 +23,7 @@ offset_bottom = 773.0
 color = Color(0.229577, 0.322775, 0.275051, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0.145868, 0.145868, 0.145868, 1)
 
 [node name="player" parent="." instance=ExtResource("1_3i4mq")]
 position = Vector2(0, -9)
